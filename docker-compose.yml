@@ -6,10 +6,10 @@ services:
     container_name: mysql_container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: hdm12122*
       MYSQL_DATABASE: gru_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: hdm12122*
     ports:
       - "3306:3306"
     volumes:
