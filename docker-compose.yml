@@ -1,4 +1,4 @@
-version: '3'
+version: "3.8"
 
 services:
   db:
@@ -6,21 +6,26 @@ services:
     container_name: mysql_container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: hdm12122*
-      MYSQL_DATABASE: gru_db
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: hdm12122*
+      MYSQL_ROOT_PASSWORD: hdm121212*         # 🔴 개발자가 수정
+      MYSQL_DATABASE: gru_db                  # 🔴 개발자가 수정
+      MYSQL_USER: admin                       # 🔴 개발자가 수정
+      MYSQL_PASSWORD: hdm121212*              # 🔴 개발자가 수정
     ports:
       - "3306:3306"
     volumes:
-      - ./db:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
 
-  flask:
+  web:
     build: .
     container_name: flask_container
+    restart: always
     ports:
       - "5000:5000"
-    depends_on:
-      - db
     volumes:
       - .:/app
+    depends_on:
+      - db
+    command: ["python", "app_gru_last.py"]      # ✅ Flask 앱 자동 실행
+
+volumes:
+  db_data:
