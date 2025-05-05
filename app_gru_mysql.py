@@ -12,9 +12,9 @@ app = Flask(__name__)
 model = load_model('model/GRU_model.h5')
 
 # MySQL connection config
-MYSQL_HOST = os.getenv("MYSQL_HOST", "localhost")
-MYSQL_USER = os.getenv("MYSQL_USER", "root")
-MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "password")
+MYSQL_HOST = os.getenv("MYSQL_HOST", "database-1.creescwqe4a4.ap-northeast-2.rds.amazonaws.com")
+MYSQL_USER = os.getenv("MYSQL_USER", "admin")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "hdm121212*")
 MYSQL_DATABASE = os.getenv("MYSQL_DATABASE", "npy_db")
 
 engine = create_engine(f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DATABASE}")
