@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GRU 예측</title>
+</head>
+<body>
+    <h1>데이터 업로드 및 예측</h1>
+    <form action="/predict" method="post">
+        <input type="submit" value="MySQL 데이터로 예측 시작">
+    </form>
+
+    {% if image %}
+    <h2>예측 결과</h2>
+    <img src="{{ image }}" alt="Prediction Plot">
+    {% endif %}
+</body>
+</html>
